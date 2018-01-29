@@ -28,7 +28,6 @@ group :development do
  gem 'coffee-rails', '~> 4.2'
  gem 'jquery-rails'
  gem 'turbolinks', '~> 5'
- gem 'bootstrap'
  gem 'figaro'
 
 
@@ -41,3 +40,5 @@ group :development do
     gem 'factory_bot_rails'
     gem 'pry-rails'
   end
+
+gem 'bootstrap-sass'
