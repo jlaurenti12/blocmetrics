@@ -10,15 +10,37 @@
   </head>
 
   <body>
-    <ul>
-    <div class="container">
-      <ul class="nav nav-tabs">
-        <li><%= link_to "Home", welcome_index_path %></li>
-        <li><%= link_to "About", welcome_about_path %></li>
-      </ul>
 
-      <%= yield %>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= link_to "Blocmetrics", welcome_index_path, class: "navbar-brand" %>
+        </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Home", welcome_index_path %></li>
+            <li><%= link_to "About", welcome_about_path %></li>
+          </ul>
+        <% if user_signed_in? %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+        </ul>
+        <span class="navbar-text navbar-right">
+          Welcome, <strong><%= current_user.email %>!</strong>
+       </span>
+        <% else %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Sign Up", new_user_registration_path %></li> -
+          <li><%= link_to "Sign In", new_user_session_path %></li>
+        </ul>
+        <% end %>
+
+        </div>
+      </div>
+    </nav>
     </div>
 
+    <%= yield %>
   </body>
 </html>
