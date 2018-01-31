@@ -1,0 +1,19 @@
+<div class='header'>
+  <h1> My Apps </h1>
+  <%= link_to "New App", new_registeredapp_path, class: 'btn btn-success' %>
+</div>
+
+<div>
+  <% @registeredapps.each do |registeredapp| %>
+    <div class="media">
+        <div class="media-body">
+          <h4 class="media-heading">
+            <%= link_to registeredapp.name, registeredapp %>
+          </h4>
+          <small>
+            <%= registeredapp.url %>
+          </small>
+        </div>
+    </div>
+  <% end %>
+</div>
