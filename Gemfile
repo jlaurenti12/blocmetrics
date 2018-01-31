@@ -8,6 +8,8 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 
+gem 'jquery-rails'
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
@@ -28,6 +30,7 @@ group :development do
  gem 'coffee-rails', '~> 4.2'
  gem 'jquery-rails'
  gem 'turbolinks', '~> 5'
+ gem 'jquery-turbolinks'
  gem 'figaro'
 
 
