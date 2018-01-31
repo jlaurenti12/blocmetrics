@@ -3,6 +3,12 @@
  <div class="row">
    <div class="col-md-8">
      <p class="lead"><%= @registeredapp.url %></p>
+     <h4><strong><%= @registeredapp.events.count %> events exist for this app</strong></h4>
+     <% @events.each do |event| %>
+ 			<p>
+        <%= event.first %>
+      </p>
+ 		 <% end %>
    </div>
    <% if current_user %>
      <div class="col-md-4">

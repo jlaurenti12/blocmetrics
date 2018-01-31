@@ -5,3 +5,34 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'devise'
+
+#Create Users
+  5.times do
+    user = User.new(
+    email:    Faker::Internet.email,
+    password: 'password'
+    )
+    user.skip_confirmation!
+    user.save!
+  end
+
+10.times do
+  registeredapp = Registeredapp.create!(
+    name: Faker::Lorem.word,
+    url: Faker::Internet.url,
+    user: User.first
+  )
+end
+
+20.times do
+  event = Event.create!(
+    name: Faker::Lorem.sentence,
+    registeredapp: Registeredapp.first
+  )
+end
+
+puts "Seed finished"
+puts "#{Registeredapp.count} registered apps created"
+puts "#{Event.count} events created"
