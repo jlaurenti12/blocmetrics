@@ -11,15 +11,15 @@ gem 'rails', '~> 5.1.4'
 gem 'jquery-rails'
 
 group :production do
+  gem 'pg', '~> 0.18'
   gem 'rails_12factor'
 end
 
-gem 'pg', '~> 0.18'
 
 group :development do
   # Use sqlite3 as the database for Active Record
-   gem 'web-console', '>= 3.3.0'
-gem 'sqlite3'
+  gem 'web-console', '>= 3.3.0'
+  gem 'sqlite3'
   gem 'listen', '~> 3.0.5'
  end
 
