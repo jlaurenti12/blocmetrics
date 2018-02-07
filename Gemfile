@@ -14,7 +14,9 @@ group :production do
   gem 'rails_12factor'
 end
 
-  gem 'pg'
+gem 'pg'
+gem 'sqlite3'
+
 group :development do
   # Use sqlite3 as the database for Active Record
    gem 'web-console', '>= 3.3.0'
