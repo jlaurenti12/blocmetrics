@@ -15,11 +15,11 @@ group :production do
 end
 
 gem 'pg', '~> 0.18'
-gem 'sqlite3'
 
 group :development do
   # Use sqlite3 as the database for Active Record
    gem 'web-console', '>= 3.3.0'
+gem 'sqlite3'
   gem 'listen', '~> 3.0.5'
  end
 
