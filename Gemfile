@@ -7,14 +7,11 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
-
-gem 'jquery-rails'
+gem 'pg', '~> 0.18'
 
 group :production do
-  gem 'pg', '~> 0.18'
   gem 'rails_12factor'
 end
-
 
 group :development do
   # Use sqlite3 as the database for Active Record
@@ -30,10 +27,14 @@ group :development do
  # Use CoffeeScript for .coffee assets and views
  gem 'coffee-rails', '~> 4.2'
  gem 'turbolinks', '~> 5'
+ gem 'jquery-rails'
  gem 'jquery-turbolinks'
  gem 'figaro'
  gem 'chartkick', '~> 2.2.0'
  gem 'groupdate'
+ gem 'bootstrap-sass'
+ gem 'devise'
+ gem 'pry-rails'
 
  group :development, :test do
     gem 'byebug'
@@ -42,8 +43,4 @@ group :development do
     gem 'shoulda'
     gem 'faker'
     gem 'factory_bot_rails'
-    gem 'pry-rails'
   end
-
-gem 'bootstrap-sass'
-gem 'devise'
