@@ -32,7 +32,8 @@ group :development do
  gem 'turbolinks', '~> 5'
  gem 'jquery-turbolinks'
  gem 'figaro'
-
+ gem 'chartkick'
+ gem 'groupdate'
 
  group :development, :test do
     gem 'byebug'

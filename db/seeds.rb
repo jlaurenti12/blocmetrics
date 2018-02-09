@@ -8,31 +8,71 @@
 
 require 'devise'
 
-#Create Users
-  5.times do
-    user = User.new(
-    email:    Faker::Internet.email,
+# Create Users
+3.times do
+  user = User.new(
+    email: Faker::Internet.email,
     password: 'password'
     )
-    user.skip_confirmation!
-    user.save!
-  end
+  user.skip_confirmation!
+  user.save!
+end
 
-10.times do
-  registeredapp = Registeredapp.create!(
+users = User.all
+
+# Create a member
+member = User.new(
+  email: 'member@example.com',
+  password: 'helloworld'
+  )
+member.skip_confirmation!
+member.save!
+
+# Create Registered Application
+Registeredapp.create!(
+  user: users.sample,
+  name: 'Valid Application',
+  url: 'http://registered_application.com'
+  )
+
+5.times do
+  Registeredapp.create!(
+    user: users.sample,
     name: Faker::Lorem.word,
-    url: Faker::Internet.url,
-    user: User.first
-  )
+    url: Faker::Internet.url
+    )
 end
 
-20.times do
-  event = Event.create!(
-    name: Faker::Lorem.sentence,
-    registeredapp: Registeredapp.first
-  )
+registeredapps = Registeredapp.all
+
+registeredapps.each do | registeredapp |
+  # Create Events
+  Event.create!(
+    registeredapp: registeredapp,
+    name: "Level 1"
+    )
+
+  Event.create!(
+    registeredapp: registeredapp,
+    name: "Level 2"
+    )
+
+  Event.create!(
+    registeredapp: registeredapp,
+    name: "Level 3"
+    )
+
+  Event.create!(
+    registeredapp: registeredapp,
+    name: "Level 4"
+    )
+
+  Event.create!(
+    registeredapp: registeredapp,
+    name: "Level 5"
+    )
 end
 
-puts "Seed finished"
-puts "#{Registeredapp.count} registered apps created"
+puts "#{User.count} users created"
+puts "#{Registeredapp.count} applications created"
 puts "#{Event.count} events created"
