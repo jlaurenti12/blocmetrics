@@ -30,7 +30,7 @@ group :development do
  gem 'jquery-rails'
  gem 'jquery-turbolinks'
  gem 'figaro'
- gem 'chartkick', '~> 2.2.0'
+ gem 'chartkick'
  gem 'groupdate'
  gem 'bootstrap-sass'
  gem 'devise'

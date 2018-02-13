@@ -222,7 +222,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   byebug
-  chartkick (~> 2.2.0)
+  chartkick
   coffee-rails (~> 4.2)
   devise
   factory_bot_rails
